@@ -1,9 +1,19 @@
 package ua.lviv.myshop.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "description")
     private String description;
+    @Column(name = "title")
     private String title;
+    @Column(name = "price")
     private double price;
 
     public Product() {
